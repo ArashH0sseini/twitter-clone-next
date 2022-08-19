@@ -13,9 +13,10 @@ import SiderBarRow from "./SiderBarRow";
 
 function Siderbar() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col col-span-2 items-center px-4
+    md:items-start">
       <img
-        className="w-10 h-10"
+        className="w-10 h-10 m-3"
         alt="logo"
         src="https://links.papareact.com/drq"
       />
