@@ -1,7 +1,8 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Feed from '../components/Feed'
-import Siderbar from '../components/Siderbar'
+import type { NextPage } from "next";
+import Head from "next/head";
+import Feed from "../components/Feed";
+import Siderbar from "../components/Siderbar";
+import Widgets from "../components/Widgets";
 
 const Home: NextPage = () => {
   return (
@@ -13,10 +14,10 @@ const Home: NextPage = () => {
       <main>
         <Siderbar />
         <Feed />
+        <Widgets />
       </main>
-
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
