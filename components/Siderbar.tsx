@@ -10,11 +10,15 @@ import {
   HomeIcon,
 } from "@heroicons/react/outline";
 import SiderBarRow from "./SiderBarRow";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 function Siderbar() {
+  const { data: session } = useSession();
   return (
-    <div className="flex flex-col col-span-2 items-center px-4
-    md:items-start">
+    <div
+      className="flex flex-col col-span-2 items-center px-4
+    md:items-start"
+    >
       <img
         className="w-10 h-10 m-3"
         alt="logo"
@@ -26,7 +30,11 @@ function Siderbar() {
       <SiderBarRow Icon={MailIcon} title="Messages" />
       <SiderBarRow Icon={BookmarkIcon} title="Bookmarks" />
       <SiderBarRow Icon={CollectionIcon} title="Lists" />
-      <SiderBarRow Icon={UserIcon} title="Sign In" />
+      <SiderBarRow
+        onClick={session ? signOut : signIn}
+        Icon={UserIcon}
+        title={session ? "Sign Out" : "Sign In"}
+      />
       <SiderBarRow Icon={DotsCircleHorizontalIcon} title="More" />
     </div>
   );
